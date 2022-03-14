@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Service Wookiee</title>
     <script defer src="main.js"></script>
+   
 </head>
 
 <body class="bg-cover bg-no-repeat" style="background-image: url('chewie.jpg');">
@@ -30,6 +31,13 @@
             <button class="rounded p-4 bg-yellow-800 text-white shadow-sm">Fetch</button>
         </div>
     </template>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js').then(function () {
+              console.log("service worker registred");
+          });
+        }
+    </script>
 </body>
 
 </html>
